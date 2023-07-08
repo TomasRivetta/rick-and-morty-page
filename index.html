@@ -4,16 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick And Morty Page</title>
+    <link href="public/styles/main.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <h1>Rick And Morty Page</h1>
     </header>
     <main>
-        <h1>Lista de Personajes</h1>
+
+        <section>
+            <h1>Lista de Personajes</h1>
+            <input type="text">
+            <button>Buscar</button>
+        </section>
+        <section>
+            <div class="lds-facebook">
+                <div></div><div></div><div></div>
+            </div>
+        </section>        
+        <section>
+            <div id="characters">
+            </div>
+        </section>
+        
+        <button type="button" id="prev">⬅</button>
+        <button type="button" id="next">➡</button>
     </main>
     <footer>
         <p>Hecho con el ♥ por <a href="https://github.com/TomasRivetta" target="_blank">@TomasRivetta</a></p>
     </footer>
+    <script src="src/index.js" type="module"></script>
 </body>
 </html>
