@@ -1,5 +1,9 @@
+main{
+  background-color: #65727c;
+  font-family: var(--font-size);
+}
 
-
+/*LOADER*/
 .lds-facebook {
   display: inline-block;
   position: relative;
@@ -36,3 +40,69 @@
     height: 26px;
   }
 }
+
+.container-search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+}
+
+.search-input{
+  width: 50%;
+}
+
+#characters{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-tarjeta{
+  margin: 1% auto;
+}
+
+.container-character{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 10%;
+  background-color: #535b61;
+  gap: 3%;
+}
+
+.character-img{
+  display: block;
+}
+
+.info-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 70%;
+}
+
+
+.container-pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+  padding: 2%;
+}
+
+.btn--pagination{
+  border-radius: 5%;
+  padding: 1%;
+  cursor: pointer;
+  background-color: #535b61;
+}
+
+.text-footer{
+  text-align: center;
+  margin: 2% auto;
+}
+

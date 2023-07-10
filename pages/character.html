@@ -4,32 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick And Morty Page</title>
+    
+    <link href="../public/styles/normalize.css" rel="stylesheet">
+    <link href="../public/styles/index.css" rel="stylesheet">
+    <link href="../public/styles/header.css" rel="stylesheet">
+    <link href="../public/styles/main.css" rel="stylesheet">
+    <link href="../public/styles/footer.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <header class="header">
-        <h1>Rick And Morty Page</h1>
-    </header>
-    <main>
-
-        <section>
-            <h1>Lista de Personajes</h1>
-            <input type="text">
-            <button>Buscar</button>
-        </section>
-        <section>
-            <div class="lds-facebook">
-                <div></div><div></div><div></div>
+    <body>
+        <header>
+            <div class="container-header">
+                <img src="../public/img/banner.png" class="banner">
             </div>
-        </section>        
-        <section>
-            <div id="characters">
+        </header>
+        <main>
+            <section class="container-search">
+                
+            </section>
+            <section>
+                <div class="lds-facebook">
+                    <div></div><div></div><div></div>
+                </div>
+            </section>        
+            <section>
+                <div id="characters">
+    
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container-footer">
+                <p class="text-footer">Hecho con el ♥ por <a href="https://github.com/TomasRivetta" target="_blank">@TomasRivetta</a></p>
             </div>
-        </section>
-        
-    </main>
-    <footer>
-        <p>Hecho con el ♥ por <a href="https://github.com/TomasRivetta" target="_blank">@TomasRivetta</a></p>
-    </footer>
+        </footer>
     <script src="../src/details.js" type="module"></script>
 </body>
 </html>
