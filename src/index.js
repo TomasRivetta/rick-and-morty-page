@@ -7,6 +7,7 @@ const loader = document.querySelector('.lds-facebook')
 const next = document.querySelector('#next')
 const prev = document.querySelector('#prev')
 
+let contador = 1;
 
 const listCharacters = async (page = 1) => {
     
@@ -28,10 +29,19 @@ const listCharacters = async (page = 1) => {
                 </div>
 
                 <div class="info-card">
-                    <h5 class="">${character.name}</h5>
-                    <p class="">${character.status} - ${character.species}</p>
-                    <p class="">${character.origin.name}</p>
-                    <a href="/#/${character.id}" class="">Ver detalle</a>
+                    <div>
+                        <h1 class="">${character.name}</h1>
+                    </div>
+                    
+                    <div>
+                        <p class="">${character.status} - ${character.species}</p>
+                        <p class="">${character.origin.name}</p>
+                    </div>
+
+                    <div>
+                        <a href="/#/${character.id}" class="">Ver detalle</a>
+                    </div>
+
                 </div>
             </div>
         `
@@ -53,15 +63,13 @@ window.addEventListener('hashchange', () => {
     window.location.replace('/pages/character.html')
 })
 
-// let contador = 1;
-
 // //PAGINACION
-// next.addEventListener('click', () =>{
-//     contador++
-//     listCharacters(contador);
-// })
+next.addEventListener('click', () =>{
+    contador++
+    listCharacters(contador);
+})
 
-// prev.addEventListener('click', () =>{
-//     contador--
-//     listCharacters(contador);
-// })
+prev.addEventListener('click', () =>{
+    contador--
+    listCharacters(contador);
+})

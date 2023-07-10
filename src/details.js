@@ -17,15 +17,26 @@ const listCharacter = async (id = 1) => {
     article.setAttribute('class','container-character')
     
     article.innerHTML = `
-        <div>
-            <img src="${data.image}" alt="imagen de ${data.name}">
-        </div>
-        <div>
-            <h2>${data.name}</h2>
-            <p class="${data.status}">${data.status} - ${data.species}</p>
-            <p>Genero: ${data.gender}</p>
-            <p>Localizacion: ${data.location.name}</p>
-            <p>Origen: ${data.origin.name}</p>
+
+
+        <div class="container-character">
+            <div class="container-img">
+                <img src="${data.image}" class="character-img" alt="imagen de ${data.name}">
+            </div>
+
+            <div class="info-card">
+                <div>
+                    <h1 class="">${data.name}</h1>
+                </div>
+                
+                <div>
+                    <p class="${data.status}">${data.status} - ${data.species}</p>
+                    <p>Genero: ${data.gender}</p>
+                    <p>Localizacion: ${data.location.name}</p>
+                    <p>Origen: ${data.origin.name}</p>
+                </div>
+
+            </div>
         </div>
     `
 
