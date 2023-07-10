@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rick And Morty Page</title>
+    
+    <link href="public/styles/normalize.css" rel="stylesheet">
+    <link href="public/styles/index.css" rel="stylesheet">
+    <link href="public/styles/header.css" rel="stylesheet">
     <link href="public/styles/main.css" rel="stylesheet">
+    <link href="public/styles/footer.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <header class="header">
-        <h1>Rick And Morty Page</h1>
+    <header>
+        <div class="container-header">
+            <img src="public/img/banner.png" class="banner">
+        </div>
     </header>
     <main>
-
-        <section>
-            <h1>Lista de Personajes</h1>
-            <input type="text">
-            <button>Buscar</button>
-        </section>
+        <!-- <section class="container-search">
+            <input class="search-input me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-secondary" type="submit">Search</button>
+        </section> -->
+        
         <section>
             <div class="lds-facebook">
                 <div></div><div></div><div></div>
@@ -24,14 +35,21 @@
         </section>        
         <section>
             <div id="characters">
+
             </div>
         </section>
         
-        <button type="button" id="prev">⬅</button>
-        <button type="button" id="next">➡</button>
+        <section>
+            <div class="container-pagination">
+                <button type="button" id="prev" class="btn--pagination">Prev⬅</button>
+                <button type="button" id="next" class="btn--pagination">Next➡</button>
+            </div>
+        </section>
     </main>
     <footer>
-        <p>Hecho con el ♥ por <a href="https://github.com/TomasRivetta" target="_blank">@TomasRivetta</a></p>
+        <div class="container-footer">
+            <p class="text-footer">Hecho con el ♥ por <a href="https://github.com/TomasRivetta" target="_blank">@TomasRivetta</a></p>
+        </div>
     </footer>
     <script src="src/index.js" type="module"></script>
 </body>
