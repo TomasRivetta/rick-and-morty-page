@@ -1,4 +1,6 @@
 import { getCharacters } from "./data/getData.js";
+import { getCharacterForFilter } from "./data/getData.js";
+
 
 const container = document.querySelector('#characters')
 
@@ -6,6 +8,8 @@ const loader = document.querySelector('.lds-facebook')
 
 const next = document.querySelector('#next')
 const prev = document.querySelector('#prev')
+
+const btnSearch = document.querySelector(".btnSearch")
 
 let contador = 1;
 
@@ -17,36 +21,26 @@ const listCharacters = async (page = 1) => {
     //Lo muestra hasta que traiga la informacion
     loader.style.display = "none"
 
+    container.innerHTML = "";
+
     results.forEach(character => {
         
         const article = document.createElement('article')
         article.setAttribute('class','container-tarjeta')
 
         article.innerHTML = `
-            <div class="container-character">
-                <div class="container-img">
-                    <img src="${character.image}" class="character-img" alt="imagen de ${character.name}">
-                </div>
-
-                <div class="info-card">
-                    <div>
-                        <h1 class="">${character.name}</h1>
-                    </div>
-                    
-                    <div>
-                        <p class="">${character.status} - ${character.species}</p>
-                        <p class="">${character.origin.name}</p>
-                    </div>
-
-                    <div>
-                        <a href="/#/${character.id}" class="">Ver detalle</a>
-                    </div>
-
-                </div>
+        <div class="card" style="width: 18rem;">
+            <img src="${character.image}" class="card-img-top" alt="imagen de ${character.name}">
+            <div class="card-body">
+                <h5 class="card-title">${character.name}</h5>
+                <p class="">${character.status} - ${character.species}</p>
+                <p class="">${character.origin.name}</p>
+            <a href="/#/${character.id}" class="btn-detail btn btn-secondary">Ver detalle</a>
             </div>
-        `
+        </div>`
 
         container.appendChild(article)
+
 
     });
 }
@@ -63,13 +57,71 @@ window.addEventListener('hashchange', () => {
     window.location.replace('/pages/character.html')
 })
 
-// //PAGINACION
+//FILTRAR LOS PERSONAJES POR NOMBRE
+const mostrar = async (name) => {
+
+    container.innerHTML = "";
+
+    loader.style.display = "inline-block";
+
+    const { results,info } = await getCharacterForFilter(name)
+
+    if(info.count > 0){
+
+        loader.style.display = "none";
+
+        results.forEach(character => {
+        
+            const article = document.createElement('article')
+            article.setAttribute('class','container-tarjeta')
+
+            article.innerHTML = `
+            <div class="card" style="width: 18rem;">
+                <img src="${character.image}" class="card-img-top" alt="imagen de ${character.name}">
+                <div class="card-body">
+                    <h5 class="card-title">${character.name}</h5>
+                    <p class="">${character.status} - ${character.species}</p>
+                    <p class="">${character.origin.name}</p>
+                <a href="/#/${character.id}" class="btn-detail btn btn-primary">Ver detalle</a>
+                </div>
+            </div>`
+            container.appendChild(article)
+    
+        });
+    }
+    else{
+        loader.style.display = "inline-block";
+        alert("ERROR")
+    }
+    
+}
+
+btnSearch.addEventListener("click", ()=>{
+    const valorSearchInput = document.querySelector(".txtSearch").value
+    mostrar(valorSearchInput);
+})
+
+//PAGINACION
 next.addEventListener('click', () =>{
-    contador++
-    listCharacters(contador);
+    if (contador > 42) {
+        swal({
+            icon: "error",
+            title: "Llego al maximo de paginas!",
+          });
+    } else {
+        contador++
+        listCharacters(contador);
+    }
 })
 
 prev.addEventListener('click', () =>{
-    contador--
-    listCharacters(contador);
+    if (contador == 1) {
+        swal({
+            icon: "error",
+            title: "No se puede retroceder!",
+          });
+    } else {        
+        contador--
+        listCharacters(contador);
+    }
 })

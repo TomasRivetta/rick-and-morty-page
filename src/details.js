@@ -14,31 +14,19 @@ const listCharacter = async (id = 1) => {
     loader.style.display = "none"
  
     const article = document.createElement('article')
-    article.setAttribute('class','container-character')
-    
+
     article.innerHTML = `
-
-
-        <div class="container-character">
-            <div class="container-img">
-                <img src="${data.image}" class="character-img" alt="imagen de ${data.name}">
-            </div>
-
-            <div class="info-card">
-                <div>
-                    <h1 class="">${data.name}</h1>
-                </div>
-                
-                <div>
-                    <p class="${data.status}">${data.status} - ${data.species}</p>
-                    <p>Genero: ${data.gender}</p>
-                    <p>Localizacion: ${data.location.name}</p>
-                    <p>Origen: ${data.origin.name}</p>
-                </div>
-
-            </div>
+    <div class="card" style="width: 18rem;">
+        <img src="${data.image}" class="card-img-top" alt="imagen de ${data.name}">
+        <div class="card-body">
+            <h5 class="card-title">${data.name}</h5>
+            <p class="${data.status}">${data.status} - ${data.species}</p>
+            <p>Genero: ${data.gender}</p>
+            <p>Localizacion: ${data.location.name}</p>
+            <p class="">Origen: ${data.origin.name}</p>
         </div>
-    `
+    </div>
+`
 
     container.appendChild(article)
 }
