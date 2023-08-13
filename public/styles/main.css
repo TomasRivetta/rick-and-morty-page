@@ -1,9 +1,16 @@
 main{
-  background-color: #65727c;
+  background-color: rgb(39, 43, 51);
   font-family: var(--font-size);
 }
 
 /*LOADER*/
+
+.container--loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .lds-facebook {
   display: inline-block;
   position: relative;
@@ -52,6 +59,17 @@ main{
   width: 50%;
 }
 
+.container--btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn--inicio{
+  margin: 1% auto;
+}
+
+
 #characters{
   display: flex;
   flex-wrap: wrap;
@@ -71,6 +89,7 @@ main{
   height: 10%;
   background-color: #535b61;
   gap: 3%;
+  margin-bottom: 3%;
 }
 
 .character-img{
@@ -85,6 +104,24 @@ main{
   width: 70%;
 }
 
+.btn-detail{
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.btn-detail:hover{
+  color: white;
+}
+
+.card{
+  margin-bottom: 2%;
+}
+
+.card--personaje{
+  flex-direction: row;
+  width: 30rem !important;
+}
 
 .container-pagination{
   display: flex;
@@ -93,16 +130,3 @@ main{
   gap: 2%;
   padding: 2%;
 }
-
-.btn--pagination{
-  border-radius: 5%;
-  padding: 1%;
-  cursor: pointer;
-  background-color: #535b61;
-}
-
-.text-footer{
-  text-align: center;
-  margin: 2% auto;
-}
-
