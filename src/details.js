@@ -16,7 +16,7 @@ const listCharacter = async (id = 1) => {
     const article = document.createElement('article')
 
     article.innerHTML = `
-    <div class="card" style="width: 18rem;">
+    <div class="card card--personaje" style="width: 18rem;">
         <img src="${data.image}" class="card-img-top" alt="imagen de ${data.name}">
         <div class="card-body">
             <h5 class="card-title">${data.name}</h5>

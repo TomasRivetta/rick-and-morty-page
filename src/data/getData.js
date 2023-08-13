@@ -3,7 +3,6 @@ const baseUrl = "https://rickandmortyapi.com/api/character"
 
 const container = document.querySelector("#characters");
 
-
 //TRAER SOLO UN PERSONAJE
 // @param id = numero del persona solicitado
 const getCharacter = async (id) => {
