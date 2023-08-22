@@ -1,11 +1,11 @@
-main{
+main {
   background-color: rgb(39, 43, 51);
   font-family: var(--font-size);
 }
 
 /*LOADER*/
 
-.container--loader{
+.container--loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +17,7 @@ main{
   width: 64px;
   height: 64px;
 }
+
 .lds-facebook div {
   display: inline-block;
   position: absolute;
@@ -25,63 +26,58 @@ main{
   background: #cef;
   animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
+
 .lds-facebook div:nth-child(1) {
   left: 6px;
   animation-delay: -0.24s;
 }
+
 .lds-facebook div:nth-child(2) {
   left: 26px;
   animation-delay: -0.12s;
 }
+
 .lds-facebook div:nth-child(3) {
   left: 45px;
   animation-delay: 0;
 }
+
 @keyframes lds-facebook {
   0% {
     top: 6px;
     height: 51px;
   }
-  50%, 100% {
+
+  50%,
+  100% {
     top: 19px;
     height: 26px;
   }
 }
 
-.container-search{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2%;
-}
-
-.search-input{
-  width: 50%;
-}
-
-.container--btn{
+.container--btn {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.btn--inicio{
+.btn--inicio {
   margin: 1% auto;
 }
 
 
-#characters{
+#characters {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
-.container-tarjeta{
+.container-tarjeta {
   margin: 1% auto;
 }
 
-.container-character{
+.container-character {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,11 +88,11 @@ main{
   margin-bottom: 3%;
 }
 
-.character-img{
+.character-img {
   display: block;
 }
 
-.info-card{
+.info-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,26 +100,26 @@ main{
   width: 70%;
 }
 
-.btn-detail{
+.btn-detail {
   cursor: pointer;
   text-decoration: none;
   color: black;
 }
 
-.btn-detail:hover{
+.btn-detail:hover {
   color: white;
 }
 
-.card{
+.card {
   margin-bottom: 2%;
 }
 
-.card--personaje{
+.card--personaje {
   flex-direction: row;
   width: 30rem !important;
 }
 
-.container-pagination{
+.container-pagination {
   display: flex;
   align-items: center;
   justify-content: center;
